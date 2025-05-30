@@ -28,7 +28,7 @@ import fs from 'fs';
 // const siExiste: boolean = fs.existsSync('example.ts');
 // console.log(siExiste);
 
-// fs.mkdir('mi-Folder', (err) => {
+// fs.mkdir('http-module', (err) => {
 //   if (err) throw err;
 //   console.log(`carpeta creada`);
 // });
@@ -42,3 +42,4 @@ import fs from 'fs';
 //   if (err) throw err;
 //   console.log('Files:', files);
 // });
+
