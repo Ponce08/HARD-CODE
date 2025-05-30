@@ -2,6 +2,7 @@
   "name": "native_modules",
   "version": "1.0.0",
   "main": "modules_node.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +11,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "ts-node": "^10.9.2"
+    "ts-node": "10.9.2",
+    "typescript": "^5.8.3"
   }
 }
