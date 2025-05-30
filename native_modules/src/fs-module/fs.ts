@@ -38,4 +38,7 @@ import fs from 'fs';
 //   console.log(`carpeta borrada`);
 // });
 
-
+// fs.readdir('native_modules', (err, files) => {
+//   if (err) throw err;
+//   console.log('Files:', files);
+// });
