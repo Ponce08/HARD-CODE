@@ -1,4 +1,5 @@
 // import path from 'path';
+import { URL } from 'url';
 
 // const pathFile = 'native_modules/src/http-module/index.html';
 
@@ -17,3 +18,14 @@
 //   name: 'index'
 // };
 // console.log(path.format(objPath));
+
+// const myURL = new URL('https://example.com:8080/path/page.html?id=123&lang=es#section');
+
+// console.log(myURL);
+
+// let myUrl = new URL('/products', 'https://ponce.com')
+// myUrl.searchParams.append('name', 'yonathan')
+
+// console.log(myUrl);
+
+
