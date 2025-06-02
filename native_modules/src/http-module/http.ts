@@ -1,4 +1,6 @@
 import http from 'http';
+import fs from 'fs';
+import path from 'path';
 
 // const createServer = http.createServer((req, res) => {
 //   res.writeHead(200, { 'content-type': 'text/plain' });
@@ -54,3 +56,5 @@ import http from 'http';
 //   console.log('Servidor en puerto 3000');
 //   fetch(url);
 // });
+
+// const createServer = http.createServer(())
