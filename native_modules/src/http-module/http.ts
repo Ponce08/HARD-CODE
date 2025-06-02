@@ -57,4 +57,20 @@ import path from 'path';
 //   fetch(url);
 // });
 
-// const createServer = http.createServer(())
+const createServer = http.createServer((req, res) => {
+  const filePath = path.join(__dirname, 'index.html');
+
+  fs.readFile(filePath, (err, data) => {
+    if (err) {
+      res.writeHead(500, { 'content-type': 'text/plain' });
+      res.end('Error del Servidor');
+    } else {
+      res.writeHead(200, { 'content-type': 'text/html' });
+      res.end(data);
+    }
+  });
+});
+
+createServer.listen(3000, () => {
+  console.log('Mostrando html en puerto 3000!!');
+});
