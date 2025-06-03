@@ -58,7 +58,7 @@ function simulateClientRequest(message: string) {
     res.on('data', (d) => process.stdout.write(d));
   });
 
-  req.write(JSON.stringify({ mensaje: message }));
+  req.write(message);
   req.end();
 }
 
@@ -85,7 +85,7 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(3000, () => {
-  console.log('🚀 Servidor en http://localhost:3000');
+  console.log('Servidor en http://localhost:3000');
 
   // Simulamos una petición legítima
   simulateClientRequest('Hola desde el cliente');
