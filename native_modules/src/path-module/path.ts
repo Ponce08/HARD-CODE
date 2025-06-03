@@ -28,4 +28,14 @@ import { URL } from 'url';
 
 // console.log(myUrl);
 
+// !-----------Event module----------
 
+import EventEmitter from 'events';
+
+const newEvent = new EventEmitter();
+
+newEvent.on('yo', (nombre) => {
+  console.log(`Hola me llamo ${nombre}`);
+});
+
+newEvent.emit('yo', 'yonathan');
