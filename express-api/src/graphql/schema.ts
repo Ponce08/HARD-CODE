@@ -13,11 +13,27 @@ const users: User[] = [
   { id: 5, name: 'Isabela' }
 ];
 
-const schema = buildSchema(`
-    type User {
-    id:Int
+const schema = buildSchema(/* GraphQL */ `
+  type User {
+    id: Int
     name: String
-    }
-    
-    
-    `);
+  }
+
+  query getUsers:[User]
+
+  type Mutation{
+    createUser(name:String):User
+  }
+`);
+
+const rootValue = {
+  getUsers: () => users,
+  createUser: (name: string) => {
+    const newUser: User = { id: users.length + 1, name };
+    users.push(newUser);
+
+    return newUser;
+  }
+};
+
+export default { schema, rootValue };
