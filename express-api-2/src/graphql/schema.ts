@@ -28,6 +28,13 @@ const schema = buildSchema(/* GraphQL */ `
   }
 `);
 
-const rootValue = ()=>{
-  
-}
+const rootValue = {
+  getUsers: () => users,
+  createUser: ({ name }: { name: string }) => {
+    const newUser: User = { id: users.length + 1, name };
+    users.push(newUser);
+    return newUser;
+  }
+};
+
+export default { schema, rootValue };
