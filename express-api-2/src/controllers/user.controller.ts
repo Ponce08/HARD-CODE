@@ -27,7 +27,16 @@ export const createUser = (req: Request, res: Response, next: NextFunction) => {
     next(error);
   }
 };
-
+/**
+ * Controlador para actualizar un usuario existente completamente.
+ *
+ * Busca un usuario por ID en la lista `users` y actualiza su nombre con los datos recibidos en el body.
+ *
+ * @param req - Objeto de solicitud HTTP (Request). Debe contener `id` en los parámetros y `name` en el body.
+ * @param res - Objeto de respuesta HTTP (Response). Se usa para devolver el resultado de la operación.
+ * @param next - Función que pasa al siguiente middleware en caso de error.
+ * @returns Respuesta JSON con el usuario actualizado o un mensaje de error si no se encuentra el usuario.
+ */
 export const updateUser = (req: Request, res: Response, next: NextFunction) => {
   try {
     const ID = parseInt(req.params.id);
@@ -68,7 +77,10 @@ export const deleteUser = (req: Request, res: Response, next: NextFunction) => {
   try {
     const ID = parseInt(req.params.id);
     const user = users.find((u) => u.id === ID);
-    if (!user) res.status(404).json({ message: 'Usuario no encontrado' });
+    if (!user) {
+      res.status(404).json({ message: 'Usuario no encontrado' });
+      return;
+    }
 
     users = users.filter((u) => u.id !== ID);
 

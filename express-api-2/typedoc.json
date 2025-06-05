@@ -1,0 +1,8 @@
+{
+  "entryPoints": ["src/controllers"],
+  "entryPointStrategy": "expand",
+  "out": "docs",
+  "includeVersion": true,
+  "excludePrivate": true,
+  "excludeExternals": true
+}
