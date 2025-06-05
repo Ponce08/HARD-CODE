@@ -16,7 +16,7 @@ const users: User[] = [
 const schema = buildSchema(/* GraphQL */ `
   type User {
     id: Int
-    name: String
+    name: string
   }
 
   type Query {
@@ -28,14 +28,6 @@ const schema = buildSchema(/* GraphQL */ `
   }
 `);
 
-const rootValue = {
-  getUsers: () => users,
-  createUser: ({ name }: { name: string }) => {
-    const newUser: User = { id: users.length + 1, name };
-    users.push(newUser);
-
-    return newUser;
-  }
-};
-
-export default { schema, rootValue };
+const rootValue = ()=>{
+  
+}
