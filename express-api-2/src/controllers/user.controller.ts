@@ -70,7 +70,7 @@ export const deleteUser = (req: Request, res: Response, next: NextFunction) => {
     const user = users.find((u) => u.id === ID);
     if (!user) res.status(404).json({ message: 'Usuario no encontrado' });
 
-    users = users.filter((u) => u.id === ID);
+    users = users.filter((u) => u.id !== ID);
 
     res.status(201).json({ message: `Usuario con ID:${ID} eliminado correctamente` });
   } catch (error) {
