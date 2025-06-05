@@ -1,5 +1,5 @@
 {
-  "entryPoints": ["src/controllers"],
+  "entryPoints": ["src"],
   "entryPointStrategy": "expand",
   "out": "docs",
   "includeVersion": true,
