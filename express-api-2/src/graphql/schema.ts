@@ -16,7 +16,7 @@ const users: User[] = [
 const schema = buildSchema(/* GraphQL */ `
   type User {
     id: Int
-    name: string
+    name: String
   }
 
   type Query {
