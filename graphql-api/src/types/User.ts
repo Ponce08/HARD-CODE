@@ -1,6 +1,10 @@
 export interface User {
-  id: number;
+  id: string;
   name: string;
+  email: string;
 }
 
-export const users: User[] = [];
+export interface UserInput {
+  name: string;
+  email: string;
+}
