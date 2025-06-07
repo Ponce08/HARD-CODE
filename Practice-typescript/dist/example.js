@@ -32,5 +32,16 @@ function statusCode(code) {
     console.log(`My status code is ${code}`);
     return code;
 }
-console.log(statusCode(404));
-console.log(statusCode('404'));
+// console.log(statusCode(404));
+// console.log(statusCode('404'));
+function divide({ dividend, divisor }) {
+    return dividend / divisor;
+}
+function negate() {
+    return (c) => 4 + c;
+}
+const negate2 = negate();
+// console.log(negate2(6));
+let x = 'yonathan';
+let y = x;
+console.log(y.length);
