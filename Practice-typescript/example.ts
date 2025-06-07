@@ -38,3 +38,28 @@ const objPonce: Obj3 = {
   lastName: '',
   age: 0
 };
+
+interface Family3 {
+  amount: number;
+  womens: number;
+}
+
+interface Family4 extends Family3 {
+  mens: number;
+}
+
+const family5: Family4 = {
+  amount: 5,
+  womens: 3,
+  mens: 2
+};
+
+const { amount, womens, mens } = family5;
+
+function statusCode(code: string | number): string | number {
+  console.log(`My status code is ${code}`);
+  return code;
+}
+
+// console.log(statusCode(404));
+// console.log(statusCode('404'));

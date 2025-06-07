@@ -17,4 +17,20 @@ var PonceFamily2;
     PonceFamily2["Ponce"] = "Yonathan";
     PonceFamily2["Santiago"] = "Cardona";
 })(PonceFamily2 || (PonceFamily2 = {}));
-console.log(PonceFamily2.Santiago);
+const objPonce = {
+    name: '',
+    lastName: '',
+    age: 0
+};
+const family5 = {
+    amount: 5,
+    womens: 3,
+    mens: 2
+};
+const { amount, womens, mens } = family5;
+function statusCode(code) {
+    console.log(`My status code is ${code}`);
+    return code;
+}
+console.log(statusCode(404));
+console.log(statusCode('404'));
