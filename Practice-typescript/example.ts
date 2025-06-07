@@ -5,7 +5,7 @@
 // console.log(objType)
 
 enum PonceFamily {
-  Ponce,
+  Ponce = 1,
   Leydy,
   Santiago,
   Isabela,
@@ -14,4 +14,11 @@ enum PonceFamily {
 
 let family2: PonceFamily = PonceFamily.Isabela;
 
-console.log(family2);
+// console.log(PonceFamily.Julieta);
+
+enum PonceFamily2 {
+  Ponce = 'Yonathan',
+  Santiago = 'Cardona'
+}
+
+console.log(PonceFamily2.Santiago);
