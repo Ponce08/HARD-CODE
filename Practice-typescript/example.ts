@@ -86,7 +86,7 @@ let y = x as string;
 let w = <string>x;
 
 class Person {
-  private name: string;
+  private readonly name: string;
 
   public constructor(name: string) {
     this.name = name;
@@ -101,3 +101,14 @@ let newPerson = new Person('yonathan');
 // console.log(newPerson.getName());
 // console.log(newPerson.name);
 
+interface Shape {
+  getArea: () => number;
+}
+
+class Rectangle implements Shape {
+  public constructor(protected readonly width: number, protected readonly heigth: number) {}
+
+  public getArea(): number {
+    return this.width * this.heigth;
+  }
+}
