@@ -111,4 +111,12 @@ class Rectangle implements Shape {
   public getArea(): number {
     return this.width * this.heigth;
   }
+
+  hacerSonido(): void {
+    console.log(`Wau Wau`);
+  }
+}
+
+class Square extends Rectangle {
+  override hacerSonido() {}
 }
