@@ -85,4 +85,19 @@ let y = x as string;
 
 let w = <string>x;
 
-// console.log(y.length);
+class Person {
+  private name: string;
+
+  public constructor(name: string) {
+    this.name = name;
+  }
+
+  public getName(): string {
+    return this.name;
+  }
+}
+
+let newPerson = new Person('yonathan');
+// console.log(newPerson.getName());
+// console.log(newPerson.name);
+

@@ -44,4 +44,14 @@ const negate2 = negate();
 // console.log(negate2(6));
 let x = 'yonathan';
 let y = x;
-console.log(y.length);
+let w = x;
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+    getName() {
+        return this.name;
+    }
+}
+let newPerson = new Person('yonathan');
+console.log(newPerson.getName());
