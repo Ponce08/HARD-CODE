@@ -54,4 +54,34 @@ class Person {
     }
 }
 let newPerson = new Person('yonathan');
-console.log(newPerson.getName());
+class Rectangle {
+    constructor(width, heigth) {
+        this.width = width;
+        this.heigth = heigth;
+    }
+    getArea() {
+        return this.width * this.heigth;
+    }
+    hacerSonido() {
+        console.log(`Wau Wau`);
+    }
+}
+class Square extends Rectangle {
+    hacerSonido() { }
+}
+// ?---------------------------------------------------------------
+class Polygon {
+    toString() {
+        return `Polygon[area=${this.getArea()}]`;
+    }
+}
+class Rectangles extends Polygon {
+    constructor(width, height) {
+        super();
+        this.width = width;
+        this.height = height;
+    }
+    getArea() {
+        return this.width * this.height;
+    }
+}

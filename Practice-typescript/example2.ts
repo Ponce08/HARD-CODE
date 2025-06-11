@@ -173,5 +173,10 @@ numberArray = getFilledArray<number>(9, 6);
 personArray = getFilledArray<{ name: string; age: number }>({ name: 'J. Dean', age: 24 }, 6);
 coordinateArray = getFilledArray<[number, number]>([3, 4], 6);
 
-// ?______________________________________________
+// console.log(stringArray)
 
+let functionTest = getFilledArray<[number, number]>([3, 4], 6);
+
+// console.log(functionTest())
+
+// ?______________________________________________
