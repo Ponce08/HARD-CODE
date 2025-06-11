@@ -208,3 +208,39 @@ function formatListings(listings: (string | number)[]) {
 const result = formatListings(['123 Main St', 226800, '580 Broadway Apt 4a', 337900]);
 
 // console.log(result);
+
+type Goose = {
+  isPettable: boolean;
+  hasFeathers: boolean;
+  canThwartAPicnic: boolean;
+};
+
+type Moose = {
+  isPettable: boolean;
+  hasHoofs: boolean;
+};
+
+// const pettingZooAnimal: Goose | Moose = { isPettable: true, hasFeathers:true };
+
+type Like = {
+  username: string;
+  displayName: string;
+};
+
+type Share = {
+  username: string;
+  displayName: string;
+};
+
+function getFriendNameFromEvent(event: Like | Share) {
+  return event.displayName || event.username;
+}
+
+const newEvent = {
+  username: 'vkrauss',
+  displayName: 'Veronica Krauss'
+};
+
+const friendName = getFriendNameFromEvent(newEvent);
+
+// console.log(`You have an update from ${friendName}.`);
