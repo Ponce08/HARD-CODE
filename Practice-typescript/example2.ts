@@ -393,6 +393,117 @@ class DesktopDirectory implements Directory {
 
 const Desktop = new DesktopDirectory();
 
-Desktop.addFile("lesson-notes.txt");
-Desktop.showPreview("lesson-notes.txt");
+Desktop.addFile('lesson-notes.txt');
+Desktop.showPreview('lesson-notes.txt');
+
+interface Directory2 {
+  addFile: (name: string) => void;
+  // Define a config type member here
+  config: {
+    default: {
+      encoding: string;
+      permissions: string;
+    };
+  };
+}
+
+class DesktopDirectory2 implements Directory {
+  config = {
+    default: {
+      encoding: 'utf-8',
+      permissions: 'drw-rw-rw-'
+    }
+  };
+
+  addFile(name: string) {
+    console.log(`Adding file: ${name}`);
+  }
+
+  showPreview(name: string) {
+    console.log(`Opening preview of file: ${name}`);
+  }
+}
+
+const Desktop2 = new DesktopDirectory2();
+
+// console.log(Desktop2.config);
+
+interface Directory3 {
+  addFile: (name: string) => void;
+  config: Config;
+}
+
+interface DefaultConfig {
+  encoding: string;
+  permissions: string;
+}
+
+interface Config {
+  default: DefaultConfig;
+}
+
+class DesktopDirectory3 implements Directory3 {
+  config = {
+    default: {
+      encoding: 'utf-8',
+      permissions: 'drw-rw-rw-'
+    }
+  };
+
+  addFile(name: string) {
+    console.log(`Adding file: ${name}`);
+  }
+
+  showPreview(name: string) {
+    console.log(`Opening preview of file: ${name}`);
+  }
+}
+
+const Desktop3 = new DesktopDirectory3();
+
+// console.log(Desktop3.config);
+
+interface Developer extends Human2 {
+  code: () => void;
+}
+
+// Add your interface here
+interface Human2 {
+  name: string;
+  hobbies: string[];
+}
+
+const me: Developer = {
+  code: () => console.log('Headphones on. Coffee brewed. Editor open.'),
+  name: 'Corrina',
+  hobbies: ['Building rockets']
+};
+
+me.code();
+
+// Write an interface here
+interface UserNameOptions {
+  firstName?: string;
+  lastName?: string;
+  username: string;
+}
+
+function getUserName(options: UserNameOptions) {
+  if (options.firstName && options.lastName) {
+    return console.log(`${options.firstName} ${options.lastName}`);
+  }
+
+  return console.log(options.username);
+}
+
+getUserName({
+  firstName: "Mr.",
+  lastName: "Oshiro",
+  username: "hotelowner304",
+});
+
+getUserName({
+  firstName: "Madeline",
+  username: "mountainClimber",
+});
 
