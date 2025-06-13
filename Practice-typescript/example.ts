@@ -64,7 +64,7 @@ function statusCode(code: string | number): string | number {
 // console.log(statusCode(404));
 // console.log(statusCode('404'));
 
-function divide({ dividend, divisor }: { dividend: number; divisor: number }) {
+function divider({ dividend, divisor }: { dividend: number; divisor: number }) {
   return dividend / divisor;
 }
 

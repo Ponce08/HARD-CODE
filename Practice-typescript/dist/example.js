@@ -34,7 +34,7 @@ function statusCode(code) {
 }
 // console.log(statusCode(404));
 // console.log(statusCode('404'));
-function divide({ dividend, divisor }) {
+function divider({ dividend, divisor }) {
     return dividend / divisor;
 }
 function negate() {

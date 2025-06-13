@@ -131,5 +131,177 @@ stringArray = getFilledArray('hi', 6);
 numberArray = getFilledArray(9, 6);
 personArray = getFilledArray({ name: 'J. Dean', age: 24 }, 6);
 coordinateArray = getFilledArray([3, 4], 6);
-console.log(stringArray);
+// console.log(stringArray)
+let functionTest = getFilledArray([3, 4], 6);
+// console.log(functionTest())
 // ?______________________________________________
+function formatValue(value) {
+    // Write your code here
+    if (typeof value === 'string') {
+        console.log(value.toLowerCase());
+    }
+    else if (typeof value === 'number') {
+        console.log(value.toFixed(2));
+    }
+}
+// formatValue('Hiya');
+// formatValue(42);
+function formatListings(listings) {
+    return listings.map((listing) => {
+        if (typeof listing === 'string') {
+            return listing.toUpperCase();
+        }
+        if (typeof listing === 'number') {
+            return `$${listing.toLocaleString()}`;
+        }
+    });
+}
+const result = formatListings(['123 Main St', 226800, '580 Broadway Apt 4a', 337900]);
+function getFriendNameFromEvent(event) {
+    return event.displayName || event.username;
+}
+const newEvent = {
+    username: 'vkrauss',
+    displayName: 'Veronica Krauss'
+};
+const friendName = getFriendNameFromEvent(newEvent);
+function downloadStatus(status) {
+    if (status === 'idle') {
+        console.log('Download');
+    }
+    if (status === 'downloading') {
+        console.log('Downloading');
+    }
+    if (status === 'complete') {
+        console.log('Your download is complete!');
+    }
+}
+// downloadStatus('downloading');
+function formatStatistic(stat) {
+    if (typeof stat === 'number') {
+        return stat.toFixed(2);
+    }
+    if (typeof stat === 'string') {
+        return stat.toUpperCase();
+    }
+}
+const siameseCat = {
+    name: 'Proxie',
+    run: () => 'pitter pat'
+};
+const bettaFish = {
+    name: 'Neptune',
+    swim: () => 'bubble blub'
+};
+function move(pet) {
+    if ('run' in pet) {
+        return pet.run();
+    }
+    if ('swim' in pet) {
+        return pet.swim();
+    }
+}
+const fettuccine = {
+    menuName: 'Fettuccine',
+    boil: () => 'Heat water to 212 degrees'
+};
+const steak = {
+    menuName: 'New York Strip Steak',
+    panFry: () => 'Heat oil to 350 degrees'
+};
+function prepareEntree(entree) {
+    if ('boil' in entree) {
+        return entree.boil();
+    }
+    else {
+        return entree.panFry();
+    }
+}
+const iron = {
+    magnetize: () => 'Electromagnet activated'
+};
+const bottle = {
+    melt: () => 'Furnace set to 2,700 degrees'
+};
+function recycle(trash) {
+    // Add your code below:
+    if ('magnetize' in trash) {
+        return trash.magnetize();
+    }
+    return trash.melt();
+}
+function updateRunGoal(run) {
+    console.log(`
+Miles left:       ${50 - run.miles}
+Percent of goal:  ${(run.miles / 50) * 100}% complete
+  `);
+}
+updateRunGoal({
+    miles: 5
+});
+class DesktopDirectory {
+    addFile(name) {
+        console.log(`Adding file: ${name}`);
+    }
+    showPreview(name) {
+        console.log(`Opening preview of file: ${name}`);
+    }
+}
+const Desktop = new DesktopDirectory();
+Desktop.addFile('lesson-notes.txt');
+Desktop.showPreview('lesson-notes.txt');
+class DesktopDirectory2 {
+    constructor() {
+        this.config = {
+            default: {
+                encoding: 'utf-8',
+                permissions: 'drw-rw-rw-'
+            }
+        };
+    }
+    addFile(name) {
+        console.log(`Adding file: ${name}`);
+    }
+    showPreview(name) {
+        console.log(`Opening preview of file: ${name}`);
+    }
+}
+const Desktop2 = new DesktopDirectory2();
+class DesktopDirectory3 {
+    constructor() {
+        this.config = {
+            default: {
+                encoding: 'utf-8',
+                permissions: 'drw-rw-rw-'
+            }
+        };
+    }
+    addFile(name) {
+        console.log(`Adding file: ${name}`);
+    }
+    showPreview(name) {
+        console.log(`Opening preview of file: ${name}`);
+    }
+}
+const Desktop3 = new DesktopDirectory3();
+const me = {
+    code: () => console.log('Headphones on. Coffee brewed. Editor open.'),
+    name: 'Corrina',
+    hobbies: ['Building rockets']
+};
+me.code();
+function getUserName(options) {
+    if (options.firstName && options.lastName) {
+        return console.log(`${options.firstName} ${options.lastName}`);
+    }
+    return console.log(options.username);
+}
+getUserName({
+    firstName: "Mr.",
+    lastName: "Oshiro",
+    username: "hotelowner304",
+});
+getUserName({
+    firstName: "Madeline",
+    username: "mountainClimber",
+});
