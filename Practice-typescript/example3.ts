@@ -31,3 +31,29 @@ function esAdmin(usuario: Admin | Cliente) {
 }
 
 const u: Admin | Cliente = { rol: 'Cliente', puntos: 5 };
+
+// ?-------------------------------------------------------------
+
+function yon(): unknown {
+  return { name: 'yonathan' };
+}
+
+// const k = yon() as { name: string };
+
+const k = <{ name: string }>yon();
+
+k.name;
+
+interface Producto {
+  id: number;
+  nombre: string;
+  precio: number;
+  disponible: boolean;
+}
+
+const producto: Producto = {
+  id: 1,
+  nombre: "Monitor",
+  precio: 299.99,
+  disponible: true
+};
