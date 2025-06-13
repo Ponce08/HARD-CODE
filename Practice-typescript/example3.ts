@@ -53,7 +53,30 @@ interface Producto {
 
 const producto: Producto = {
   id: 1,
-  nombre: "Monitor",
+  nombre: 'Monitor',
   precio: 299.99,
   disponible: true
 };
+
+// ?_______________________________________________
+
+interface Cliente2 {
+  id: number;
+  nombre: string;
+  direccion: {
+    ciudad: string;
+    calle: string;
+  };
+}
+
+const cliente: Cliente2 = {
+  id: 1,
+  nombre: 'Laura',
+  direccion: {
+    ciudad: 'Bogotá',
+    calle: 'Calle 123'
+  }
+};
+
+// Acceso seguro
+// console.log(cliente.direccion.ciudad); // ✅ Bogotá
