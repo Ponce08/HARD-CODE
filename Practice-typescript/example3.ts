@@ -80,3 +80,20 @@ const cliente: Cliente2 = {
 
 // Acceso seguro
 // console.log(cliente.direccion.ciudad); // ✅ Bogotá
+
+// ?______________________________________________________
+
+interface Inventario {
+  [nombreProducto: string]: number;
+}
+
+const stock: Inventario = {
+  monitor: 10,
+  teclado: 5,
+  mouse: 20,
+};
+
+for (const producto in stock) {
+  console.log(`${producto}: ${stock[producto]}`);
+}
+
