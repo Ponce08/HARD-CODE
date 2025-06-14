@@ -232,3 +232,36 @@ type OnlyNumber<T, N> = {
 type Result = OnlyNumber<People, number>;
 
 const obj4: Result = 'yearBorn';
+// ?____________________________________________________________________
+
+// 💡 Casos de uso comunes
+// 1. Filtrar tipos
+type Filtrar<T, U> = T extends U ? T : never;
+
+type SoloStrings = Filtrar<string | number | boolean, string>;
+// SoloStrings = string
+// 2. Excluir tipos
+type Excluir<T, U> = T extends U ? never : T;
+
+type SinStrings = Excluir<string | number | boolean, string>;
+// SinStrings = number | boolean
+// ⚠️ Estos son como los utilitarios nativos Extract y Exclude.
+
+// 🛠️ Crear tu propio utilitario
+// 1. Cambiar propiedades a readonly si son primitivas:
+type SoloReadOnlyPrimitivos<T> = {
+  [K in keyof T]: T[K] extends string | number | boolean ? Readonly<T[K]> : T[K];
+};
+
+// 🧠 Avanzado: detectar si una propiedad es opcional
+type EsOpcional<T, K extends keyof T> = {} extends Pick<T, K> ? true : false;
+
+type Usuario5 = {
+  id: number;
+  nombre?: string;
+};
+
+type Test1 = EsOpcional<Usuario5, 'nombre'>; // true
+type Test2 = EsOpcional<Usuario5, 'id'>; // false
+
+// !¿Qué son los Conditional Types? (Pendiente por aprender)
