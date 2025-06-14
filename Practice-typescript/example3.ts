@@ -187,14 +187,48 @@ const key: LlavesUsuario = 'nombre'; // ✅ válido
 // Obtiene el tipo de una variable o función ya declarada.
 const usuario = {
   id: 1,
-  nombre: "Carlos"
+  nombre: 'Carlos'
 };
 
 type TipoUsuario = typeof usuario;
 
 const otroUsuario: TipoUsuario = {
   id: 2,
-  nombre: "Laura"
+  nombre: 'Laura'
 };
 
 // ?____________________________________________________________________
+type Modificable<T> = {
+  -readonly [K in keyof T]: T[K];
+};
+
+// ❌ -readonly (quita readonly)
+type Modificable2<T> = {
+  -readonly [K in keyof T]: T[K];
+};
+
+// ❓ ? (opcional)
+type Parcial<T> = {
+  [K in keyof T]?: T[K];
+};
+
+// ❗ -? (quita el ? si existiera)
+type Obligatorio<T> = {
+  [K in keyof T]-?: T[K];
+};
+
+// ?____________________________________________________________________
+
+type People = {
+  name: string;
+  age: number;
+  yearBorn: number;
+};
+
+type OnlyNumber<T, N> = {
+  [K in keyof T]: T[K] extends N ? K : never;
+}[keyof T];
+
+type Result = OnlyNumber<People, number>;
+
+const obj4: Result = 'yearBorn';
