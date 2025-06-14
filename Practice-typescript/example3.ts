@@ -90,10 +90,41 @@ interface Inventario {
 const stock: Inventario = {
   monitor: 10,
   teclado: 5,
-  mouse: 20,
+  mouse: 20
 };
 
 for (const producto in stock) {
   console.log(`${producto}: ${stock[producto]}`);
 }
 
+// ?___________________________________________________________
+const usuarios: Record<string, number> = {
+  juan: 30,
+  maria: 25
+};
+
+interface Producto2 {
+  id: number;
+  nombre?: string;
+  precio?: number;
+}
+
+// Supón que el cliente puede enviar datos incompletos
+const productoParcial: Producto2 = {
+  id: 1,
+  nombre: 'Teclado',
+  precio: 100
+};
+
+// Pero antes de guardar, quieres asegurarte que todo esté completo
+function guardarProducto(p: Required<Producto2>) {
+  console.log('Guardando...', p);
+}
+
+// guardarProducto(productoParcial); // ❌ Error: falta 'precio'
+
+guardarProducto({
+  id: 1,
+  nombre: 'Teclado',
+  precio: 100
+}); // ✅
