@@ -128,3 +128,45 @@ guardarProducto({
   nombre: 'Teclado',
   precio: 100
 }); // ✅
+
+// ?____________________________________________________________________
+
+interface Usuario {
+  id: number;
+  nombre: string;
+  email: string;
+  rol: string;
+}
+
+// ✅ Solo quiero "nombre" y "email"
+type UsuarioPublico = Pick<Usuario, "nombre" | "email">;
+
+const user: UsuarioPublico = {
+  nombre: "Carlos",
+  email: "carlos@email.com"
+};
+
+// ?____________________________________________________________________
+// ✅ Quiero todas las propiedades EXCEPTO el 'email'
+type UsuarioSinEmail = Omit<Usuario, "email">;
+
+const user2: UsuarioSinEmail = {
+  id: 1,
+  nombre: "Carlos",
+  rol: "admin"
+};
+// ?____________________________________________________________________
+// ✅ Quiero solo 'nombre' y 'email', y que sean obligatorios
+type UsuarioRegistro = Required<Pick<Usuario, "nombre" | "email">>;
+
+const nuevoUsuario: UsuarioRegistro = {
+  nombre: "Laura",
+  email: "laura@email.com"
+};
+
+// ✅ Quiero que todas las propiedades excepto 'id' sean opcionales
+type UsuarioEditable = Partial<Omit<Usuario, "id">>;
+
+const editUser: UsuarioEditable = {
+  nombre: "Luis" // puedes poner solo una propiedad
+};
