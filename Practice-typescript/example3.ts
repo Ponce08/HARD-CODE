@@ -274,3 +274,8 @@ type Obj_1 = { id: number };
 type Obj_2 = Obj_0 | Obj_1;
 
 const obj0: Obj_2 = {};
+
+type str1 = 'Admin' | 'User' | 'State';
+type str2 = 'Pending' | 'Done' | 'Cancel';
+
+type str3 = `${str1}_${str2}`;
