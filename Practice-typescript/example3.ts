@@ -315,16 +315,25 @@ function formatear(valor: number): string;
 function formatear(valor: Date): string;
 function formatear(valor: string): string;
 function formatear(valor: any): string {
-  if (typeof valor === "number") {
+  if (typeof valor === 'number') {
     return valor.toFixed(2);
   }
   if (valor instanceof Date) {
     return valor.toISOString();
   }
-  if (typeof valor === "string") {
+  if (typeof valor === 'string') {
     return valor.trim();
   }
-  throw new Error("Tipo no soportado");
+  throw new Error('Tipo no soportado');
 }
 
 // ?>_________________________________________________________
+
+function Logger(constructor: Function) {
+  console.log(`📣 Decorador ejecutado para: ${constructor.name}`);
+}
+
+@Logger
+class User {
+  constructor() {}
+}
