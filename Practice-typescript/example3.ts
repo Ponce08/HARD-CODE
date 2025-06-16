@@ -279,3 +279,32 @@ type str1 = 'Admin' | 'User' | 'State';
 type str2 = 'Pending' | 'Done' | 'Cancel';
 
 type str3 = `${str1}_${str2}`;
+
+// ?>_________________________________________________________
+
+type A1<T> = T extends (...args: infer P) => void ? P : never;
+
+type A2 = (a: number, b: number) => void;
+
+type A3 = A1<A2>;
+// ?>_________________________________________________________
+
+type A4<T> = T extends (...args: any[]) => infer P ? P : never;
+
+type A5 = () => Promise<number>;
+
+type A6 = A4<A5>;
+
+// ?>_________________________________________________________
+
+type SoloFunciones<T> = {
+  [K in keyof T]: T[K] extends (...args: any) => any ? K : never;
+}[keyof T];
+
+type Ejemplo = {
+  id: number;
+  saludar(): void;
+  despedir(): void;
+};
+
+type ClavesFuncionales = SoloFunciones<Ejemplo>; // "saludar" | "despedir"
