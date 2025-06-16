@@ -264,4 +264,13 @@ type Usuario5 = {
 type Test1 = EsOpcional<Usuario5, 'nombre'>; // true
 type Test2 = EsOpcional<Usuario5, 'id'>; // false
 
-// !¿Qué son los Conditional Types? (Pendiente por aprender)
+type EsOpcional2<T> = {
+  [K in keyof T]: {} extends Pick<T, K> ? K : never;
+}[keyof T];
+
+type Obj_0 = {};
+type Obj_1 = { id: number };
+
+type Obj_2 = Obj_0 | Obj_1;
+
+const obj0: Obj_2 = {};
