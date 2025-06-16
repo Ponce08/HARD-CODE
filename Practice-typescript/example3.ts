@@ -308,3 +308,23 @@ type Ejemplo = {
 };
 
 type ClavesFuncionales = SoloFunciones<Ejemplo>; // "saludar" | "despedir"
+
+// ?>_________________________________________________________
+
+function formatear(valor: number): string;
+function formatear(valor: Date): string;
+function formatear(valor: string): string;
+function formatear(valor: any): string {
+  if (typeof valor === "number") {
+    return valor.toFixed(2);
+  }
+  if (valor instanceof Date) {
+    return valor.toISOString();
+  }
+  if (typeof valor === "string") {
+    return valor.trim();
+  }
+  throw new Error("Tipo no soportado");
+}
+
+// ?>_________________________________________________________
