@@ -198,3 +198,78 @@ class Persona5 {
 
 // ?__________________________________________________________
 
+class Persona6 {
+  private _edad: number = 0;
+
+  get edad(): number {
+    return this._edad;
+  }
+
+  set edad(valor: number) {
+    if (valor >= 0) {
+      this._edad = valor;
+    } else {
+      throw new Error('La edad no puede ser negativa');
+    }
+  }
+}
+
+const persona = new Persona6();
+persona.edad = 25; // usa el setter
+// console.log(persona.edad); // usa el getter → 25
+
+// ?__________________________________________________________
+
+const Animal0 = class {
+  tipo: string;
+
+  constructor(tipo: string) {
+    this.tipo = tipo;
+  }
+
+  hablar() {
+    console.log(`Este es un ${this.tipo}`);
+  }
+};
+
+const a = new Animal0('león');
+a.hablar(); // Este es un león
+
+// ?__________________________________________________________
+
+class Boton {
+  mensaje = 'Click!';
+
+  clickHandler() {
+    console.log(this.mensaje); // undefined si se pierde el contexto
+  }
+}
+
+const b = new Boton();
+setTimeout(b.clickHandler, 1000); // ❌ this no apunta al botón
+
+setTimeout(b.clickHandler.bind(b), 1000); // ✅ "Click!"
+
+// ?__________________________________________________________
+
+type Constructor<T = {}> = new (...args: any[]) => T;
+
+function Volador<TBase extends Constructor>(Base: TBase) {
+  return class extends Base {
+    volar() {
+      console.log('Estoy volando ✈️');
+    }
+  };
+}
+
+class Animal1 {
+  moverse() {
+    console.log('Me muevo');
+  }
+}
+
+const AnimalVolador = Volador(Animal1);
+
+const pajaro = new AnimalVolador();
+pajaro.moverse(); // Me muevo
+pajaro.volar(); // Estoy volando ✈️
