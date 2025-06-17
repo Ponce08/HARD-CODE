@@ -64,3 +64,35 @@ const gato2 = new Gato('Neko', 3);
 // console.log(gato2.nombre); // Neko
 
 // ?__________________________________________________________
+
+class Persona {
+  nombre: string;
+
+  constructor(nombre: string) {
+    this.nombre = nombre;
+  }
+
+  saludar() {
+    console.log(`Hola, soy ${this.nombre}`);
+  }
+}
+
+const persona1 = new Persona('Juan');
+// persona1.saludar(); // Hola, soy Juan
+
+class Auto {
+  marca: string;
+
+  constructor(marca: string) {
+    this.marca = marca;
+  }
+
+  mostrarMarca() {
+    console.log(`La marca del auto es ${this.marca}`);
+  }
+}
+
+const auto1 = new Auto('Toyota');
+// auto1.mostrarMarca(); // La marca del auto es Toyota
+
+// ?__________________________________________________________
