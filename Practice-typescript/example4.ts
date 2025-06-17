@@ -96,3 +96,62 @@ const auto1 = new Auto('Toyota');
 // auto1.mostrarMarca(); // La marca del auto es Toyota
 
 // ?__________________________________________________________
+
+class Animal2 {
+  respirar() {
+    console.log('Estoy respirando 🫁');
+  }
+}
+
+class Perro2 extends Animal2 {
+  ladrar() {
+    console.log('¡Guau! 🐶');
+  }
+}
+
+const dog = new Perro2();
+dog.respirar(); // Estoy respirando 🫁
+dog.ladrar(); // ¡Guau! 🐶
+
+class Animal {
+  nombre: string;
+
+  constructor(nombre: string) {
+    this.nombre = nombre;
+  }
+}
+
+class Perro3 extends Animal {
+  raza: string;
+
+  constructor(nombre: string, raza: string) {
+    super(nombre); // llama al constructor de Animal
+    this.raza = raza;
+  }
+
+  mostrarInfo() {
+    console.log(`Perro: ${this.nombre}, Raza: ${this.raza}`);
+  }
+}
+
+const dog2 = new Perro3('Max', 'Labrador');
+dog2.mostrarInfo(); // Perro: Max, Raza: Labrador
+
+// ?__________________________________________________________
+
+class Animal4 {
+  hablar() {
+    console.log('Hace algún sonido');
+  }
+}
+
+class Gato4 extends Animal4 {
+  override hablar() {
+    console.log('Miau 😺');
+  }
+}
+
+const gato = new Gato4();
+gato.hablar(); // Miau 😺
+
+// ?__________________________________________________________
