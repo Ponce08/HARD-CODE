@@ -155,3 +155,46 @@ const gato = new Gato4();
 gato.hablar(); // Miau 😺
 
 // ?__________________________________________________________
+
+class Usuario {
+  private contraseña: string;
+
+  constructor(contraseña: string) {
+    this.contraseña = contraseña;
+  }
+
+  verificarContraseña(pass: string) {
+    return this.contraseña === pass;
+  }
+}
+// ?__________________________________________________________
+
+class Utilidades {
+  static saludar(nombre: string) {
+    return `Hola, ${nombre}`;
+  }
+}
+
+console.log(Utilidades.saludar('Juan')); // Hola, Juan
+// ❌ No necesitas hacer new Utilidades()
+
+// ?__________________________________________________________
+
+class Persona5 {
+  public nombre: string;
+  private edad: number;
+  #dni: string;
+
+  constructor(nombre: string, edad: number, dni: string) {
+    this.nombre = nombre;
+    this.edad = edad;
+    this.#dni = dni;
+  }
+
+  mostrar() {
+    console.log(`${this.nombre}, edad ${this.edad}, DNI oculto`);
+  }
+}
+
+// ?__________________________________________________________
+
