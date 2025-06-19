@@ -124,3 +124,23 @@ mv folder1 folder2
 
 Aquí, “folder1” es renombrado a “folder2.” 
 ---------------------------------------------------------------------------------------------------------------------------
+8. rm – Eliminar Archivos y Directorios
+El comando rm elimina archivos y directorios. Úsalo con precaución porque los archivos y directorios eliminados no se pueden recuperar.
+
+La Sintaxis es:
+
+rm [opciones] /nombre/
+
+Opciones útiles de rm:
+
+-r – Elimina directorios de forma recursiva, incluyendo todos los contenidos dentro de ellos. Necesario al eliminar directorios.
+-f – Forzar la eliminación y suprimir todas las solicitudes de confirmación. ¡Peligroso sin posibilidad de recuperación!
+-i – Solicitar confirmación antes de eliminar cada archivo o directorio. Proporciona seguridad contra borrado accidental. 
+Por Ejemplo:
+
+rm -rf temp
+
+Esto eliminará de forma recursiva el directorio “temp” y todos sus contenidos sin solicitar confirmaciones (-f anula las confirmaciones).
+
+Nota: El comando rm borra permanentemente archivos y carpetas, así que úsalo con extrema precaución. Si se usa con privilegios de sudo, también podrías eliminar por completo el directorio raíz y Linux dejará de funcionar después de reiniciar tu computadora.
+---------------------------------------------------------------------------------------------------------------------------
