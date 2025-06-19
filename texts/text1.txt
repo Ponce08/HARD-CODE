@@ -12,3 +12,13 @@ Te proporcionan un control detallado sobre tu sistema, algo difícil de lograr c
 Te permiten automatizar tareas mediante scripts de shell y procesamiento por lotes.
 Se pueden utilizar para acceder a recursos del sistema como el sistema de archivos, red, memoria y CPU.
 Forman la base de la interacción con servidores y sistemas operativos Linux.
+
+---------------------------------------------------------------------------------------------------------------------------
+1. ls – Listar Contenidos de Directorio
+
+Algunas de las opciones más útiles de ls incluyen:
+-l – Muestra los resultados en formato largo, mostrando detalles adicionales como permisos, propiedad, tamaño y fecha de modificación para cada archivo y directorio.
+-a – Muestra archivos y directorios ocultos que comienzan con . además de los elementos no ocultos.
+-R – Lista de forma recursiva todo el contenido de los subdirectorios, descendiendo indefinidamente en carpetas secundarias.
+-S – Ordena los resultados por tamaño de archivo, comenzando por el más grande.
+-t – Ordena por marca de tiempo, el más reciente primero.
