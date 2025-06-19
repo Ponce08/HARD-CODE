@@ -1,0 +1,14 @@
+¿Qué Son Los comandos Linux?
+Los comandos de Linux te permiten controlar tu sistema desde la interfaz de línea de comandos (CLI) en lugar de utilizar tu ratón o trackpad. Son instrucciones de texto introducidas en el terminal para indicarle a tu sistema exactamente qué hacer.
+
+Los comandos que ingreses en el terminal de Linux distinguen entre mayúsculas y minúsculas y siguen una sintaxis como “comando -opciones argumentos“. Puedes combinarlos para tareas complejas mediante pipelines y redirecciones.
+
+Algunas cosas clave para saber sobre los comandos de Linux:
+
+Son sensibles a mayúsculas y minúsculas; por ejemplo, “ls” y “LS” significan cosas diferentes.
+Siguen una sintaxis específica como “comando -opciones argumentos“.
+Se pueden combinar para realizar operaciones complejas mediante pipelines y redirecciones.
+Te proporcionan un control detallado sobre tu sistema, algo difícil de lograr con interfaces gráficas.
+Te permiten automatizar tareas mediante scripts de shell y procesamiento por lotes.
+Se pueden utilizar para acceder a recursos del sistema como el sistema de archivos, red, memoria y CPU.
+Forman la base de la interacción con servidores y sistemas operativos Linux.
