@@ -35,3 +35,20 @@ cd .. – Te mueve un nivel atrás hacia el directorio principal
 cd ~/pictures – Cambia a la carpeta pictures en tu directorio de inicio
 
 ---------------------------------------------------------------------------------------------------------------------------
+3. mkdir – Crear un Nuevo Directorio
+El comando mkdir te permite crear una nueva carpeta. Simplemente, específicas el nombre del directorio a crear.
+
+Sintaxis:
+
+mkdir [opción] <directorio>
+
+Esto creará un directorio llamado por ejemplo “nuevoproyecto” en el directorio de trabajo actual.
+
+Algunas opciones útiles de mkdir:
+
+-p – Crea directorios principales de forma recursiva según sea necesario.
+-v – Muestra un resultado detallado que indica los directorios creados.
+Ejemplo:
+
+mkdir -v ~/project/code
+---------------------------------------------------------------------------------------------------------------------------
