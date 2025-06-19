@@ -52,3 +52,75 @@ Ejemplo:
 
 mkdir -v ~/project/code
 ---------------------------------------------------------------------------------------------------------------------------
+4. rmdir – Eliminar Directorio
+Para eliminar un directorio vacío, utiliza el comando rmdir. Ten en cuenta que rmdir solo puede eliminar directorios vacíos, y necesitaremos el comando rm para eliminar los que tengan algún contenido.
+
+Sintaxis:
+
+rmdir [opciones] <directorio>
+
+Algunas opciones para rmdir incluyen:
+
+-v – Muestra un resultado detallada al eliminar directorios.
+-p – Elimina directorios principales de forma recursiva según sea necesario.
+Ejemplo:
+
+rmdir -v ~/project/code
+---------------------------------------------------------------------------------------------------------------------------
+5. touch – Crear Un Nuevo Archivo Vacío
+
+El comando touch se utiliza para crear instantáneamente un nuevo archivo vacío. Esto es útil cuando necesitas un archivo vacío para llenarlo con datos más tarde.
+
+La sintaxis básica de touch es:
+
+touch [opciones] /nombredearchivo
+
+Algunas opciones útiles para touch incluyen:
+
+-c – No crea el archivo si ya existe. Evita sobrescribir archivos existentes accidentalmente.
+-m – En lugar de crear un nuevo archivo, actualiza la marca de tiempo en un archivo existente. Esto se puede usar para cambiar la hora de modificación
+Por Ejemplo:
+
+touch /home/user/nuevoarchivo.txt
+---------------------------------------------------------------------------------------------------------------------------
+6. cp – Copiar Archivos y Directorios
+El comando cp copia archivos o directorios de una ubicación a otra. Requiere pasar una ruta de origen y un destino.
+
+La sintaxis básica de cp es:
+
+cp [opciones] /origen/ /destino/
+
+Algunas opciones útiles de cp:
+
+-r – Copia directorios de forma recursiva, descendiendo a subdirectorios para copiar su contenido también. 
+-i – Solicita confirmación antes de sobrescribir archivos existentes en el destino. Evita sobrescribir datos accidentalmente.
+-v – Muestra un resultado detallado que indica los detalles de cada archivo mientras se copia. Útil para confirmar exactamente lo que se copió.
+Por Ejemplo:
+
+cp -r /home/user/documents /backups/
+
+Esto copiaría de forma recursiva el directorio /home/user/documents y todo su contenido al directorio /backups/. La opción -r es necesaria para copiar directorios.
+---------------------------------------------------------------------------------------------------------------------------
+7. mv – Mover o Renombrar Archivos y Directorios
+El comando mv se utiliza para mover archivos o directorios a una ubicación diferente o renombrarlos. A diferencia del comando anterior, los archivos de la ruta de origen se eliminan después de haber sido movidos al destino.
+
+También puedes usar el comando mv para renombrar archivos, ya que solo necesitas cambiar las rutas de origen y destino al antiguo y nuevo nombre.
+
+La sintaxis de mv es:
+
+mv [opciones] /origen/ /destino/
+
+Opciones útiles de mv:
+
+-i – Solicitar antes de sobrescribir archivos existentes en la ubicación de destino. Esto evita sobrescribir datos accidentalmente.
+-v – Producir un resultado detallado que muestre cada archivo o directorio a medida que se mueve. Útil para confirmar exactamente lo que se movió.
+Por Ejemplo:
+
+mv ~/folder1 /tmp/folder1
+
+Esto moverá folder1 desde el directorio de inicio (~) al directorio /tmp/. Echemos un vistazo a otro ejemplo de cómo usar el comando mv para renombrar archivos.
+
+mv folder1 folder2
+
+Aquí, “folder1” es renombrado a “folder2.” 
+---------------------------------------------------------------------------------------------------------------------------
