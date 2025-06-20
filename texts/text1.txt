@@ -144,3 +144,88 @@ Esto eliminará de forma recursiva el directorio “temp” y todos sus contenid
 
 Nota: El comando rm borra permanentemente archivos y carpetas, así que úsalo con extrema precaución. Si se usa con privilegios de sudo, también podrías eliminar por completo el directorio raíz y Linux dejará de funcionar después de reiniciar tu computadora.
 ---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+🧠 Sintaxis básica de find:
+
+find [ruta] [condiciones] [acciones]
+
+✅ Ejemplos comunes
+1. 🔍 Buscar todos los archivos en un directorio
+
+find .
+
+Busca todo (archivos y carpetas) desde el directorio actual (.) hacia abajo.
+
+2. 📁 Buscar por nombre de archivo
+
+find . -name archivo.txt
+
+Busca archivo.txt en el directorio actual y subdirectorios.
+
+🔁 Para que ignore mayúsculas/minúsculas:
+
+find . -iname archivo.txt
+
+3. 📄 Buscar todos los archivos con una extensión específica
+
+find . -name "*.js"
+
+Encuentra todos los archivos .js (JavaScript).
+
+4. 🧱 Buscar solo directorios
+
+find . -type d -name "mi_carpeta"
+
+5. 📂 Buscar solo archivos
+
+find . -type f -name "*.txt"
+
+6. 📅 Buscar archivos por fecha de modificación
+
+find . -mtime -1
+
+Archivos modificados en las últimas 24 horas.
+
+-mtime -N → modificados hace menos de N días
+
+-mtime +N → modificados hace más de N días
+
+7. 📏 Buscar archivos por tamaño
+
+find . -size +10M
+Archivos con más de 10 megabytes.
+
+Ejemplo:
+
+
+find . -size +1G
+Archivos con más de 1 GB.
+
+8. 🔧 Ejecutar una acción sobre los archivos encontrados
+
+find . -name "*.log" -exec rm {} \;
+
+Encuentra todos los .log y los elimina.
+
+-exec → ejecuta un comando para cada archivo encontrado.
+{} → se reemplaza por el nombre del archivo encontrado.
+\; → finaliza el comando -exec.
+
+9. 🪄 Buscar archivos vacíos
+
+find . -type f -empty
+
+🧪 Práctica avanzada
+🔁 Buscar y mover archivos:
+
+find . -name "*.png" -exec mv {} /ruta/destino/ \;
+
+🔁 Buscar y copiar:
+
+find . -name "*.csv" -exec cp {} /ruta/destino/ \;
+
+📝 Consejito
+Si tienes problemas con espacios en los nombres de archivos, puedes usar find junto con xargs o -print0 y -0:
+
+find . -name "*.mp3" -print0 | xargs -0 rm
+---------------------------------------------------------------------------------------------------------------------------
