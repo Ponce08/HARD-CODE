@@ -268,8 +268,28 @@ class Animal1 {
   }
 }
 
-const AnimalVolador = Volador(Animal1);
+// const AnimalVolador = Volador(Animal1);
 
-const pajaro = new AnimalVolador();
-pajaro.moverse(); // Me muevo
-pajaro.volar(); // Estoy volando ✈️
+// const pajaro = new AnimalVolador();
+// pajaro.moverse(); // Me muevo
+// pajaro.volar(); // Estoy volando ✈️
+
+// function Volador<TBase extends Constructor>(Base: TBase) {
+//   return class extends Base {
+//     volar() {
+//       console.log('Estoy volando ✈️');
+//     }
+//   };
+// }
+
+// class Animal1 {
+//   moverse() {
+//     console.log('Me muevo');
+//   }
+// }
+
+// const AnimalVolador = Volador(Animal1);
+
+// const pajaro = new AnimalVolador();
+// pajaro.moverse(); // Me muevo
+// pajaro.volar(); // Estoy volando ✈️
