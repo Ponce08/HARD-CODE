@@ -23,3 +23,10 @@ export const createUser = (req: Request, res: Response) => {
   users.push(newUser);
   res.status(201).json({ message: "Usuario creado correctamente", newUser });
 };
+
+// export const createUser = (req: Request, res: Response) => {
+//   const { name } = req.body;
+//   const newUser: User = { id: users.length + 1, name };
+//   users.push(newUser);
+//   res.status(201).json({ message: "Usuario creado correctamente", newUser });
+// };
