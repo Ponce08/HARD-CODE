@@ -251,4 +251,87 @@ Esto imprimirá un tamaño total fácil de leer para el directorio “pictures.�
 El comando du es útil para analizar el uso del espacio en disco de un árbol de directorios e identificar archivos que consumen espacio en exceso.
 ---------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------
+🧠 ¿Qué hace grep?
+Busca líneas que coincidan con un patrón (texto, palabra, expresión regular) dentro de uno o más archivos.
+
+🔧 Sintaxis básica:
+
+grep [opciones] "patrón" [archivo(s)]
+
+✅ Ejemplos comunes
+1. 🔍 Buscar una palabra en un archivo
+
+grep "error" archivo.txt
+
+Busca todas las líneas que contengan "error" en archivo.txt.
+
+2. 📁 Buscar recursivamente en todos los archivos de un directorio
+
+grep -r "password" .
+
+Busca la palabra "password" en todos los archivos dentro del directorio actual y subdirectorios.
+
+3. 🔁 Buscar sin distinguir mayúsculas/minúsculas
+
+grep -i "usuario" archivo.txt
+
+Encuentra "Usuario", "usuario", "USUARIO", etc.
+
+4. 📄 Mostrar el número de línea donde aparece
+
+grep -n "token" archivo.txt
+
+Añade el número de línea antes del resultado.
+
+5. 📂 Buscar en todos los archivos .js
+
+grep "console.log" *.js
+
+6. ❌ Mostrar líneas que NO contienen el patrón
+
+grep -v "DEBUG" archivo.txt
+
+7. 🔢 Contar cuántas veces aparece un patrón
+
+grep -c "404" log.txt
+
+8. 🧾 Buscar múltiples patrones
+
+grep -E "error|fail|fatal" archivo.txt
+
+-E permite usar expresiones regulares extendidas (| = “o”).
+
+9. 📜 Buscar palabra exacta
+
+grep -w "root" archivo.txt
+
+Evita resultados como "rooted" o "superroot".
+
+10. 🎯 Buscar y resaltar coincidencias
+Muchos sistemas ya lo hacen por defecto, pero puedes forzarlo con:
+
+
+grep --color "clave" archivo.txt
+
+🛠️ Combinar con otros comandos
+🔗 Usar con cat o ps:
+
+cat archivo.txt | grep "error"
+
+ps aux | grep "node"
+
+💡 Tip: Buscar en todos los archivos de un proyecto
+
+grep -rnw '.' -e 'funcionX'
+
+-r = recursivo
+
+-n = número de línea
+
+-w = coincidencia exacta de palabra
+
+-e = patrón de búsqueda
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+
 
