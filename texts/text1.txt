@@ -229,3 +229,26 @@ Si tienes problemas con espacios en los nombres de archivos, puedes usar find ju
 
 find . -name "*.mp3" -print0 | xargs -0 rm
 ---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+10. du – Estimar el Uso del Espacio de un Archivo
+El comando du mide el uso del espacio en disco para un directorio dado. Cuando se usa sin opciones, muestra el uso del disco para el directorio de trabajo actual.
+
+La Sintaxis de du Es:
+
+du [opciones] [ruta]
+
+Opciones útiles de du:
+
+-h –  Muestra los tamaños de archivo en un formato fácil de leer para humanos, como K para kilobytes en lugar de un recuento de bytes. Mucho más fácil de analizar.
+-s – Muestra solo el tamaño total para un directorio, en lugar de enumerar cada subdirectorio y archivo. Bueno para resúmenes.
+-a – Muestra tamaños individuales de archivos además de totales. Ayuda a identificar archivos grandes.
+Por Ejemplo:
+
+du -sh pictures
+
+Esto imprimirá un tamaño total fácil de leer para el directorio “pictures.”
+
+El comando du es útil para analizar el uso del espacio en disco de un árbol de directorios e identificar archivos que consumen espacio en exceso.
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+
