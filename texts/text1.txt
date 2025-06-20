@@ -333,5 +333,90 @@ grep -rnw '.' -e 'funcionX'
 -e = patrón de búsqueda
 ---------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------
+🧠 ¿Qué es awk?
+Es un lenguaje de procesamiento de texto que lee línea por línea, divide cada línea en campos (columnas) y permite aplicar acciones a esos campos.
 
+🧾 Sintaxis básica:
+
+awk 'condición {acción}' archivo
+Por defecto, los campos se separan por espacios o tabulaciones.
+
+$1 = primer campo
+$2 = segundo campo
+$0 = línea completa
+
+✅ Ejemplos prácticos
+1. 🪪 Imprimir una columna específica
+
+awk '{print $1}' archivo.txt
+
+Muestra la primera columna de cada línea.
+
+2. 📊 Imprimir varias columnas
+
+awk '{print $1, $3}' archivo.txt
+
+3. 🧪 Filtrar líneas por valor
+
+awk '$3 > 50 {print $1, $3}' archivo.txt
+
+Muestra las filas donde la columna 3 es mayor que 50.
+
+4. 🧹 Eliminar encabezado y procesar datos
+
+awk 'NR > 1 {print $1, $2}' archivo.csv
+
+NR es el número de línea.
+
+Esto omite la primera línea (títulos).
+
+5. 🧮 Suma de valores
+
+awk '{suma += $2} END {print "Total:", suma}' archivo.txt
+
+Suma todos los valores de la columna 2.
+
+6. 📂 Cambiar separador de campo (por coma, CSV por ejemplo)
+
+awk -F',' '{print $1, $3}' archivo.csv
+
+-F',' indica que las columnas están separadas por comas.
+
+7. 🔧 Separar por otro delimitador (como |)
+
+awk -F'|' '{print $2}' archivo.log
+
+8. 📏 Contar filas que cumplan una condición
+
+awk '$2 == "activo" {count++} END {print count}' usuarios.txt
+
+9. 🎨 Formato personalizado
+
+awk '{printf "Usuario: %s, Edad: %d\n", $1, $2}' archivo.txt
+
+🔄 Combinar con otros comandos
+Buscar procesos de Node.js:
+
+ps aux | grep node | awk '{print $2, $11}'
+
+Leer logs filtrando por fecha:
+
+cat access.log | awk '$4 ~ /20\/Jun\/2025/' 
+
+🧪 ¿Quieres probar con un ejemplo real?
+Supongamos que tienes este archivo usuarios.txt:
+
+Juan 25 activo
+Ana 30 inactivo
+Luis 22 activo
+Puedes hacer:
+
+awk '$3 == "activo" {print $1, "está activo"}' usuarios.txt
+
+Salida:
+Juan está activo
+Luis está activo
+
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
 
