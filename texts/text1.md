@@ -12,7 +12,6 @@ Te proporcionan un control detallado sobre tu sistema, algo difícil de lograr c
 Te permiten automatizar tareas mediante scripts de shell y procesamiento por lotes.
 Se pueden utilizar para acceder a recursos del sistema como el sistema de archivos, red, memoria y CPU.
 Forman la base de la interacción con servidores y sistemas operativos Linux.
-
 ---------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------
 1. ls – Listar Contenidos de Directorio
@@ -23,7 +22,6 @@ Algunas de las opciones más útiles de ls incluyen:
 -R – Lista de forma recursiva todo el contenido de los subdirectorios, descendiendo indefinidamente en carpetas secundarias.
 -S – Ordena los resultados por tamaño de archivo, comenzando por el más grande.
 -t – Ordena por marca de tiempo, el más reciente primero.
-
 ---------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------
 
@@ -35,7 +33,6 @@ Cuando ejecutas el comando cd por sí mismo, te llevará al directorio de inicio
 cd /usr/local – Cambia al directorio /usr/local 
 cd .. – Te mueve un nivel atrás hacia el directorio principal 
 cd ~/pictures – Cambia a la carpeta pictures en tu directorio de inicio
-
 ---------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------
 3. mkdir – Crear un Nuevo Directorio
@@ -424,7 +421,6 @@ awk '$3 == "activo" {print $1, "está activo"}' usuarios.txt
 Salida:
 Juan está activo
 Luis está activo
-
 ---------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------
 
