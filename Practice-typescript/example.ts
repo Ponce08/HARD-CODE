@@ -86,6 +86,9 @@ function divider({ dividend, divisor }: { dividend: number; divisor: number }) {
 
 type Negate = (value: number) => number;
 
+type Negate2 = (value: number) => number;
+
+
 function negate(): Negate {
   return (c) => 4 + c;
 }

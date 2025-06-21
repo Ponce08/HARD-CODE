@@ -114,6 +114,9 @@ function mathTutor(operationCallback: OperatorFunction) {
 type Human = { name: string; job: string };
 type Dog = { name: string; tailWagSpeed: number };
 
+type Dog2 = { name: string; tailWagSpeed: number };
+
+
 type Family<T> = {
   parents: [T, T];
   mate: T;
@@ -206,6 +209,9 @@ function formatListings(listings: (string | number)[]) {
 }
 
 const result = formatListings(['123 Main St', 226800, '580 Broadway Apt 4a', 337900]);
+
+const result_ = formatListings(['123 Main St', 226800, '580 Broadway Apt 4a', 337900]);
+
 
 // console.log(result);
 
