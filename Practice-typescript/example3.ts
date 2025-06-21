@@ -224,6 +224,11 @@ type People = {
   age: number;
   yearBorn: number;
 };
+// type People = {
+//   name: string;
+//   age: number;
+//   yearBorn: number;
+// };
 
 type OnlyNumber<T, N> = {
   [K in keyof T]: T[K] extends N ? K : never;
