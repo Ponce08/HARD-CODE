@@ -11,6 +11,20 @@ enum PonceFamily {
   Isabela,
   Julieta
 }
+enum PonceFamily3 {
+  Ponce = 1,
+  Leydy,
+  Santiago,
+  Isabela,
+  Julieta
+}
+// enum PonceFamily {
+//   Ponce = 1,
+//   Leydy,
+//   Santiago,
+//   Isabela,
+//   Julieta
+// }
 
 let family2: PonceFamily = PonceFamily.Isabela;
 

@@ -150,11 +150,11 @@ const user: UsuarioPublico = {
 // ✅ Quiero todas las propiedades EXCEPTO el 'email'
 type UsuarioSinEmail = Omit<Usuario, 'email'>;
 
-const user2: UsuarioSinEmail = {
-  id: 1,
-  nombre: 'Carlos',
-  rol: 'admin'
-};
+// const user2: UsuarioSinEmail = {
+//   id: 1,
+//   nombre: 'Carlos',
+//   rol: 'admin'
+// };
 // ?____________________________________________________________________
 // ✅ Quiero solo 'nombre' y 'email', y que sean obligatorios
 type UsuarioRegistro = Required<Pick<Usuario, 'nombre' | 'email'>>;
