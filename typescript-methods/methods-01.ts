@@ -1,4 +1,4 @@
-// git add . && git commit -m 'typescript-methods-04' && git push
+// git add . && git commit -m 'typescript-methods-05' && git push
 
 // 1. map() – Transforma cada elemento
 const numeros = [1, 2, 3];
@@ -40,3 +40,16 @@ const edades2 = [22, 25, 30];
 const todosMayores = edades.every(e => e >= 18);
 console.log(todosMayores); // true
 
+// 8. includes() – Verifica si existe un valor
+const colores = ["rojo", "azul", "verde"];
+console.log(colores.includes("azul")); // true
+
+// 9. sort() – Ordena el array (alfabético o numérico)
+const numeros3 = [5, 3, 8, 1];
+numeros.sort((a, b) => a - b);
+console.log(numeros); // [1, 3, 5, 8]
+
+// 10. splice() – Agrega o elimina elementos
+const letras = ["a", "b", "c", "d"];
+letras.splice(1, 2); // desde índice 1, elimina 2 elementos
+console.log(letras); // ["a", "d"]
