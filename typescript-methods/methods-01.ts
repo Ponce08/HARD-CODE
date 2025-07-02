@@ -1,4 +1,4 @@
-// git add . && git commit -m 'typescript-methods-03' && git push
+// git add . && git commit -m 'typescript-methods-04' && git push
 
 // 1. map() – Transforma cada elemento
 const numeros = [1, 2, 3];
@@ -29,3 +29,14 @@ frutas.forEach(f => console.log(f.toUpperCase()));
 // MANZANA
 // PERA
 // UVA
+
+// 6. some() – ¿Al menos un elemento cumple la condición?
+const numeros2 = [1, 3, 5, 7];
+const hayPares = numeros.some(n => n % 2 === 0);
+console.log(hayPares); // false
+
+// 7. every() – ¿Todos los elementos cumplen la condición?
+const edades2 = [22, 25, 30];
+const todosMayores = edades.every(e => e >= 18);
+console.log(todosMayores); // true
+
