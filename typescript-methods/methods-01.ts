@@ -1,4 +1,4 @@
-// git add . && git commit -m 'typescript-methods-02' && git push
+// git add . && git commit -m 'typescript-methods-03' && git push
 
 // 1. map() – Transforma cada elemento
 const numeros = [1, 2, 3];
@@ -18,3 +18,14 @@ const usuarios = [
 const usuario = usuarios.find(u => u.id === 2);
 console.log(usuario); // { id: 2, nombre: "Luis" }
 
+// 4. reduce() – Acumula todos los valores en uno solo
+const precios = [10, 20, 30];
+const total = precios.reduce((acc, val) => acc + val, 0);
+console.log(total); // 60
+
+// 5. forEach() – Itera sobre cada elemento (sin retornar)
+const frutas = ["manzana", "pera", "uva"];
+frutas.forEach(f => console.log(f.toUpperCase()));
+// MANZANA
+// PERA
+// UVA
