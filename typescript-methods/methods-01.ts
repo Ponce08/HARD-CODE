@@ -1,4 +1,4 @@
-// git add . && git commit -m 'typescript-methods-05' && git push
+// git add . && git commit -m 'typescript-methods-06' && git push
 
 // 1. map() – Transforma cada elemento
 const numeros = [1, 2, 3];
@@ -29,6 +29,15 @@ frutas.forEach(f => console.log(f.toUpperCase()));
 // MANZANA
 // PERA
 // UVA
+
+// ✅ ¿Qué más se puede hacer con forEach()?
+// 1. Actualizar elementos de un array (mutar)
+const nombres = ["Ana", "Luis", "Marta"];
+nombres.forEach((valor, i, arr) => {
+  arr[i] = valor.toUpperCase();
+});
+console.log(nombres); // ["ANA", "LUIS", "MARTA"]
+
 
 // 6. some() – ¿Al menos un elemento cumple la condición?
 const numeros2 = [1, 3, 5, 7];
