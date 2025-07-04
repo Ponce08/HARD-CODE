@@ -1,4 +1,4 @@
-// git add . && git commit -m 'typescript-methods-08' && git push
+// git add . && git commit -m 'typescript-methods-09' && git push
 
 // 1. map() – Transforma cada elemento
 const numeros = [1, 2, 3];
@@ -57,6 +57,15 @@ edades.forEach(e => {
 });
 
 console.log(`Mayores de edad: ${mayores}`); // Mayores de edad: 3
+
+//? 4. Interactuar con el DOM (si estás en un entorno de frontend)
+const botones = document.querySelectorAll('button');
+botones.forEach(btn => {
+  btn.addEventListener('click', () => {
+    alert(`Clic en: ${btn.textContent}`);
+  });
+});
+
 
 
 
