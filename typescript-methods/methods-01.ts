@@ -1,4 +1,4 @@
-// git add . && git commit -m 'typescript-methods-09' && git push
+// git add . && git commit -m 'typescript-methods-10' && git push
 
 // 1. map() – Transforma cada elemento
 const numeros = [1, 2, 3];
@@ -66,9 +66,21 @@ botones.forEach(btn => {
   });
 });
 
+//? 5. Modificar objetos dentro de un array
+const productos = [
+  { nombre: "Camisa", precio: 20 },
+  { nombre: "Pantalón", precio: 30 }
+];
 
+productos.forEach(p => {
+  p.precio *= 1.1; // aumento del 10%
+});
 
-
+console.log(productos);
+// [
+//   { nombre: "Camisa", precio: 22 },
+//   { nombre: "Pantalón", precio: 33 }
+// ]
 // !---------------------------------------------------------------------
 
 
