@@ -1,4 +1,4 @@
-// git add . && git commit -m 'typescript-methods-07' && git push
+// git add . && git commit -m 'typescript-methods-08' && git push
 
 // 1. map() – Transforma cada elemento
 const numeros = [1, 2, 3];
@@ -22,7 +22,7 @@ console.log(usuario); // { id: 2, nombre: "Luis" }
 const precios = [10, 20, 30];
 const total = precios.reduce((acc, val) => acc + val, 0);
 console.log(total); // 60
-
+// !---------------------------------------------------------------------
 // 5. forEach() – Itera sobre cada elemento (sin retornar)
 const frutas = ["manzana", "pera", "uva"];
 frutas.forEach(f => console.log(f.toUpperCase()));
@@ -47,6 +47,20 @@ numeros.forEach(n => {
 });
 
 console.log(resultado); // [10, 20, 30]
+
+//? 3. Contar cuántos cumplen cierta condición
+const edades3 = [17, 18, 21, 16, 25];
+let mayores = 0;
+
+edades.forEach(e => {
+  if (e >= 18) mayores++;
+});
+
+console.log(`Mayores de edad: ${mayores}`); // Mayores de edad: 3
+
+
+
+// !---------------------------------------------------------------------
 
 
 // 6. some() – ¿Al menos un elemento cumple la condición?
