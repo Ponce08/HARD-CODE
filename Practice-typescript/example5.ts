@@ -39,3 +39,10 @@ function aplicarDescuento(producto: Producto, descuento: number): number {
 const productoq: Producto_ = { nombre: "Teclado", precio: 100, stock: 10 };
 console.log(aplicarDescuento(producto, 20)); // 80
 // ?------------------------------------------------------------------
+function obtenerPrimero<T>(arr: T[]): T | undefined {
+  return arr[0];
+}
+
+// Prueba
+console.log(obtenerPrimero([10, 20, 30])); // 10
+console.log(obtenerPrimero(["a", "b", "c"])); // "a"
