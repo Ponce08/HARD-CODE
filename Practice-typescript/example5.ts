@@ -25,3 +25,17 @@ const persona_ = new Persona1("Juan", 30);
 console.log(persona1.saludar());
 // Hola, mi nombre es Juan y tengo 30 años.
 // ?------------------------------------------------------------------
+interface Producto_ {
+  nombre: string;
+  precio: number;
+  stock: number;
+}
+
+function aplicarDescuento(producto: Producto, descuento: number): number {
+  return producto.precio - (producto.precio * descuento) / 100;
+}
+
+// Prueba
+const productoq: Producto_ = { nombre: "Teclado", precio: 100, stock: 10 };
+console.log(aplicarDescuento(producto, 20)); // 80
+// ?------------------------------------------------------------------
