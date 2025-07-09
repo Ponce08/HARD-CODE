@@ -1,4 +1,4 @@
-// ! git add . && git commit -m 'typescript-example6-02' && git push
+// ! git add . && git commit -m 'typescript-example6-03' && git push
 
 // 🟡 S — Single Responsibility Principle (SRP)
 // "Una clase debe tener una única responsabilidad o razón para cambiar."
@@ -46,3 +46,22 @@ class PriceCalculator {
 }
 // 👉 Puedes agregar nuevos descuentos sin modificar PriceCalculator.
 // *--------------------------------------------------------------------
+// 🔴 L — Liskov Substitution Principle (LSP)
+// "Las clases hijas deben poder sustituir a sus clases padres sin alterar el comportamiento esperado."
+class Bird {
+  fly(): void {
+    console.log("Flying...");
+  }
+}
+
+class Eagle extends Bird {}
+class Parrot extends Bird {}
+
+// ❌ Incorrecto:
+class Penguin extends Bird {
+  fly(): void {
+    throw new Error("Penguins can't fly!");
+  }
+}
+// 👉 El Penguin rompe el principio, ya que no puede comportarse como un Bird.
+// *--------------------------------------------------------------------------------
