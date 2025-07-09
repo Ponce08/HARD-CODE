@@ -1,4 +1,4 @@
-// ! git add . && git commit -m 'typescript-example6-04' && git push
+// ! git add . && git commit -m 'typescript-example6-05' && git push
 
 // 🟡 S — Single Responsibility Principle (SRP)
 // "Una clase debe tener una única responsabilidad o razón para cambiar."
@@ -97,5 +97,39 @@ class Dog4 implements Walkable, Swimmable {
 }
 // 👉 Se crean interfaces más pequeñas y específicas.
 // *------------------------------------------------------------
+// 🟣 D — Dependency Inversion Principle (DIP)
+// "Los módulos de alto nivel no deben depender de módulos de bajo nivel, sino de abstracciones."
 
+// ✅ Correcto:
+interface ILogger {
+  log(message: string): void;
+}
 
+class ConsoleLogger implements ILogger {
+  log(message: string): void {
+    console.log(`Log: ${message}`);
+  }
+}
+
+class App {
+  constructor(private logger: ILogger) {}
+
+  run(): void {
+    this.logger.log('Aplicación iniciada');
+  }
+}
+
+const logger = new ConsoleLogger();
+const app = new App(logger);
+app.run();
+// 👉 App depende de una abstracción (ILogger), no de una implementación concreta (ConsoleLogger).
+// *------------------------------------------------------------------------------------------------
+
+/**✅ Conclusión
+Los principios SOLID en TypeScript te permiten:
+
+Escribir código más limpio y modular
+
+Facilitar pruebas y mantenimiento
+
+Escalar tus aplicaciones sin dolor */
