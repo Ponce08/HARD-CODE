@@ -1,4 +1,4 @@
-// ! git add . && git commit -m 'typescript-example6-03' && git push
+// ! git add . && git commit -m 'typescript-example6-04' && git push
 
 // 🟡 S — Single Responsibility Principle (SRP)
 // "Una clase debe tener una única responsabilidad o razón para cambiar."
@@ -50,7 +50,7 @@ class PriceCalculator {
 // "Las clases hijas deben poder sustituir a sus clases padres sin alterar el comportamiento esperado."
 class Bird {
   fly(): void {
-    console.log("Flying...");
+    console.log('Flying...');
   }
 }
 
@@ -65,3 +65,37 @@ class Penguin extends Bird {
 }
 // 👉 El Penguin rompe el principio, ya que no puede comportarse como un Bird.
 // *--------------------------------------------------------------------------------
+// 🟢 I — Interface Segregation Principle (ISP)
+// "Los clientes no deben estar forzados a depender de interfaces que no usan."
+
+// ❌ Mala práctica:
+interface Animal {
+  walk(): void;
+  fly(): void;
+  swim(): void;
+}
+
+/*
+class Dog4 implements Animal {
+  walk() {}
+  fly() {} // no tiene sentido
+  swim() {}
+}
+*/
+// ✅ Buena práctica:
+interface Walkable {
+  walk(): void;
+}
+
+interface Swimmable {
+  swim(): void;
+}
+
+class Dog4 implements Walkable, Swimmable {
+  walk() {}
+  swim() {}
+}
+// 👉 Se crean interfaces más pequeñas y específicas.
+// *------------------------------------------------------------
+
+
